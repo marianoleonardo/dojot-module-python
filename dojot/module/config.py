@@ -64,7 +64,7 @@ class Config:
                     "credentials": {
                         "username": "admin",
                         "password": "admin",
-                        "client_id": "admin-cli",
+                        "client_id": "cli",
                         "grant_type": "password",
                     }
                 },
