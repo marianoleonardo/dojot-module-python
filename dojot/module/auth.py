@@ -111,4 +111,5 @@ class Auth:
                 return tenants
         except Exception as e:
             LOGGER.error(e)
-            raise
+            # raise
+            return None
