@@ -86,10 +86,15 @@ class Auth:
         :rtype: list or None
         :return: List of tenants
         """
+        LOGGER.debug('getting tenants..')
 
         url = self.config.keycloak["base_path"] + 'admin/realms'
         retry_counter = self.config.keycloak["connection_retries"]
         timeout_sleep = self.config.keycloak["timeout_sleep"]
+
+        LOGGER.debug('from url='+url)
+        LOGGER.debug('with retry_counter='+retry_counter)
+        LOGGER.debug('with timeout_sleep='+timeout_sleep)
         try:
             token = self.get_management_token()
         except Exception as e:
