@@ -81,7 +81,7 @@ class Auth:
         :rtype: list or None
         :return: List of tenants
         """
-
+        # TODO: Checks if remove master. Example of return master, admin...
         url = self.config.keycloak["base_path"] + 'admin/realms'
         retry_counter = self.config.keycloak["connection_retries"]
         timeout_sleep = self.config.keycloak["timeout_sleep"]
