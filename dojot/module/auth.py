@@ -49,6 +49,7 @@ class Auth:
             token = payload.json()['access_token']
         except Exception as e:
             LOGGER.error(e)
+            print(e)
             raise
         else:
             LOGGER.debug('token succefully generated')
@@ -116,5 +117,6 @@ class Auth:
                 return tenants
         except Exception as e:
             LOGGER.error(e)
+            print(e)
             # raise
             return None
