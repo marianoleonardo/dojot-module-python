@@ -226,7 +226,7 @@ class Config:
         self.keycloak = {
             "timeout_sleep": 5,
             "connection_retries": 3,
-            "base_path": "http://keycloak:8080/auth/",
+            "base_path": "http://apigw:8000/auth/",
             "credentials": {
                 "username": "admin",
                 "password": "admin",
