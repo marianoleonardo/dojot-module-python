@@ -11,12 +11,12 @@ with io.open('README.md', 'rt', encoding='utf8') as f:
     README = f.read()
 
 setup(
-    name='dojot.module',
+    name='marianoleonardo.dojot.module',
     version='0.1.0',
-    url='http://github.com/dojot/dojot-module-python',
+    url='http://github.com/marianoleonardo/dojot-module-python',
     project_urls=OrderedDict((
-        ('Code', 'https://github.com/dojot/dojot-module-python.git'),
-        ('Issue tracker', 'https://github.com/dojot/dojot-module-python/issues'),
+        ('Code', 'https://github.com/marianoleonardo/dojot-module-python.git'),
+        ('Issue tracker', 'https://github.com/marianoleonardo/dojot-module-python/issues'),
     )),
     license='Apache-2.0',
     author='Matheus Campanha Ferreira',
