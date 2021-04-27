@@ -12,7 +12,7 @@ with io.open('README.md', 'rt', encoding='utf8') as f:
 
 setup(
     name='marianoleonardo.dojot.module',
-    version='0.1.0',
+    version='0.1.6',
     url='http://github.com/marianoleonardo/dojot-module-python',
     project_urls=OrderedDict((
         ('Code', 'https://github.com/marianoleonardo/dojot-module-python.git'),
