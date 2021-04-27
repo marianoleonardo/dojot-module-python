@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        python-version: [3.6.x]
+        python-version: [3.7.x]
 
     steps:
     - uses: actions/checkout@master
@@ -39,7 +39,7 @@ jobs:
         build
         --sdist
         --wheel
-        --outdir marianoleonardo/
+        --outdir dist/
 
     # - name: Publish distribution to Test PyPI
     #   uses: pypa/gh-action-pypi-publish@master
