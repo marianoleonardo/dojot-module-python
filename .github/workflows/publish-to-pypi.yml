@@ -6,7 +6,22 @@ on:
             - v*.*.*
 
 jobs:
+  check:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Checks whether the tag is the same as the version ignoring the begin
+      env:
+        VERSION: $(python setup.py --version)
+      if: endsWith(github.ref, $VERSION) != true
+      run: 'echo "Tag is different from the new version" && exit 1'
+
   build-and-publish:
+    needs: check
     name: Build and publish Python distributions to PyPI and TestPyPI
     runs-on: ubuntu-18.04
     strategy:
