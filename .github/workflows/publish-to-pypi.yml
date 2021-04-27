@@ -14,9 +14,12 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: get-package-version
+      run: |
+        export VERSION=$(python setup.py --version)
+        echo Package version: $VERSION
+
     - name: Checks whether the tag is the same as the version ignoring the begin
-      env:
-        VERSION: $(python setup.py --version)
       if: endsWith(github.ref, '$VERSION') != true
       run: 'echo "Tag is different from the new version" && exit 1'
 
