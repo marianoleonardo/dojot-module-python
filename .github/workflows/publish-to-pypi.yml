@@ -17,17 +17,15 @@ jobs:
     - name: get-package-version
       id: package-version
       run: |
-        echo ::set-output name=version::$(python setup.py --version)
+        echo ::set-output name=current-version::$(python setup.py --version)
 
     - name: Checks whether the tag is the same as the version ignoring the begin
       # env:
       #   VERSION: $(python setup.py --version)
       # if: endsWith(github.ref, '$VERSION') != true
       # if: contains(github.ref, '$VERSION') nao testei ainda
-      if: endsWith(github.ref, steps.package-version.outputs.version) != true
-      run: |
-        echo Package version: $VERSION
-        'echo "Tag is different from the new version" && exit 1'
+      if: endsWith(github.ref, steps.package-version.outputs.current-version) != true
+      run: 'echo "Tag is different from the new version" && exit 1'
 
   build-and-publish:
     needs: check
