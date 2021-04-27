@@ -17,7 +17,7 @@ jobs:
     - name: Checks whether the tag is the same as the version ignoring the begin
       env:
         VERSION: $(python setup.py --version)
-      if: endsWith(github.ref, VERSION) != true
+      if: endsWith(github.ref, '$VERSION') != true
       run: 'echo "Tag is different from the new version" && exit 1'
 
   build-and-publish:
