@@ -20,10 +20,10 @@ jobs:
         echo Package version: $VERSION
 
     - name: Checks whether the tag is the same as the version ignoring the begin
-      if: endsWith(github.ref, '$VERSION') != true
+      if: endsWith(github.ref, python setup.py --version) != true
       run: |
-        'echo "Tag is different from the new version" && exit 1'
         echo Package version: $VERSION
+        'echo "Tag is different from the new version" && exit 1'
 
   build-and-publish:
     needs: check
