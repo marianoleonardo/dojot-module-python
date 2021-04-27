@@ -20,6 +20,8 @@ jobs:
         echo Package version: $VERSION
 
     - name: Checks whether the tag is the same as the version ignoring the begin
+      env:
+        VERSION: $(python setup.py --version)
       if: endsWith(github.ref, '$VERSION') != true
       run: |
         echo Package version: $VERSION
